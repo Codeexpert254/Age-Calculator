@@ -16,24 +16,46 @@
 // })
 
 
-// Get references to the HTML elements
+// // Get references to the HTML elements
+// const dobInput = document.getElementById("dob");
+// const calculateBtn = document.getElementById("calculate-btn");
+// const resultDiv = document.getElementById("result");
+
+// // Function to calculate age
+// function calculateAge() {
+//     const dob = new Date(dobInput.value);
+//     const currentDate = new Date();
+    
+//     if (isNaN(dob)) {
+//         resultDiv.textContent = "Please enter a valid date of birth.";
+//     } else {
+//         const ageInMilliseconds = currentDate - dob;
+//         const ageInYears = Math.floor(ageInMilliseconds / (365 * 24 * 60 * 60 * 1000));
+//         resultDiv.textContent = `Your Age: ${ageInYears} years`;
+//     }
+// }
+
+// // Add a click event listener to the "Calculate Age" button
+// calculateBtn.addEventListener("click", calculateAge);
+
+//Get reference to HTML Elements
 const dobInput = document.getElementById("dob");
 const calculateBtn = document.getElementById("calculate-btn");
 const resultDiv = document.getElementById("result");
 
-// Function to calculate age
-function calculateAge() {
+function calculateAge(){
     const dob = new Date(dobInput.value);
     const currentDate = new Date();
-    
-    if (isNaN(dob)) {
-        resultDiv.textContent = "Please enter a valid date of birth.";
-    } else {
-        const ageInMilliseconds = currentDate - dob;
-        const ageInYears = Math.floor(ageInMilliseconds / (365 * 24 * 60 * 60 * 1000));
-        resultDiv.textContent = `Your Age: ${ageInYears} years`;
-    }
-}
 
-// Add a click event listener to the "Calculate Age" button
-calculateBtn.addEventListener("click", calculateAge);
+
+    if (isNaN(dob)){
+        resultDiv.textContent = "Please enter a valid Date";
+    }
+        else {
+            const ageInMilliseconds = currentDate -dob;
+            const ageInYears = Math.floor(ageInMilliseconds/ (365 * 24 * 60 * 60 * 1000));
+            resultDiv.textContent = `Your age: ${ageInYears} Years`;
+        }
+        
+    }
+    calculateBtn.addEventListener("click", calculateAge);
